@@ -21,6 +21,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 300,
@@ -31,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px',
         position: "relative",
         borderRadius: '10px',
-        background: '#ffff',
-        boxShadow: '-10px 10px 20px #d9d9d9, 10px -10px 10px #ff02'
+        background: '#0000',
+        boxShadow: '-10px 10px 20px #d9d9d9, 10px -10px 10px #ff02',
     },
     media: {
         height: 100,
@@ -61,12 +62,14 @@ const useStyles = makeStyles((theme) => ({
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'center',
+            background: '#EDF2F8',
         },
     },
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
-        marginLeft:"270px"
+        marginLeft:"270px",
+        background: '#EDF2F8',
     },
     selectEmpty: {
         marginTop: theme.spacing(3),
@@ -157,9 +160,10 @@ export default function ShowStudent() {
 
     return (
         <div className="d-flex justify-content-center">
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center", background:"blue" }}>
                 <h1>STUDENT DETAILS</h1>
                 <Link to="/addStudent"><Button variant="contained" color="secondary">Add Student</Button></Link>
+                <Button style={{marginLeft:"900px"}} variant="contained" color="primary" onClick={handleLogout}>LOGOUT</Button>
             </div>
             {
                 isLoading ?
@@ -246,7 +250,6 @@ export default function ShowStudent() {
                         }
                     </div>
             }
-            
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">Per Page</InputLabel>
                 <Select
@@ -260,14 +263,11 @@ export default function ShowStudent() {
                     <MenuItem value={12}>12</MenuItem>
                 </Select>
             </FormControl>
-            <div className={classes.root1}>
+            
+            <div style={{marginLeft: "550px"}} className={classes.root1}>
                 {/* <Typography>Page: {pageNo}</Typography> */}
                 <Pagination count={totalPage} page={pageNo} onChange={handleChange} />
             </div>
-            <div>
-        <button className="btn border-0 btn-danger ml-2" onClick={handleLogout}>LOGOUT</button>
         </div>
-        </div>
-        
     )
 }

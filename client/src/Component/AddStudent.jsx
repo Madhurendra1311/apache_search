@@ -86,7 +86,6 @@ export default function AddStudent() {
         for (var value of data.values()) {
             console.log(value);
             } 
-    
         const config = {
             headers: { "content-type": "multipart/form-data" },
         };

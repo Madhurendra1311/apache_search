@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -58,8 +57,8 @@ export default function SignUp() {
         email: email,
         password: password
       }
-      axios.
-        post("http://localhost:5000/user/register", payload)
+      axios
+        .post("http://localhost:5000/user/register", payload)
         .then(res=>{
           alert('register successfully')
         })
@@ -137,7 +136,7 @@ export default function SignUp() {
               </Link>
             </Grid>
           </Grid>
-          <div className="align-center"><Link to="/"><button className="btn btn-danger border-0 p-2 ml-4">Back to home</button></Link></div>
+          <Link to="/"><Button variant="contained" color="secondary">Back to home</Button></Link>
         </form>
         
       </div>
